@@ -8,7 +8,7 @@ import os
 # CONFIG
 # -------------------------------
 MODEL_PATH = "models/best_model.pkl"
-THRESHOLD = 0.5
+THRESHOLD = 0.25
 
 FEATURE_COLS = [
     'step',
