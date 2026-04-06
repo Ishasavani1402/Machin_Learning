@@ -8,7 +8,7 @@ import os
 # CONFIG
 # -------------------------------
 MODEL_PATH = "models/best_model.pkl"
-THRESHOLD = 0.25
+THRESHOLD = 0.25 # base on ROC curve
 
 FEATURE_COLS = [
     'step',
