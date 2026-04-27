@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── Reset & base ── */
+html, body, [class*="css"] {
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Background ── */
+.stApp {
+    background: #0a0e1a;
+    color: #e8eaf0;
+}
+
+/* ── Hide Streamlit chrome ── */
+#MainMenu, footer, header { visibility: hidden; }
+.block-container { padding: 2rem 3rem 4rem 3rem; max-width: 1200px; }
+
+/* ── Hero header ── */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    border-bottom: 1px solid #1e2a40;
+    margin-bottom: 2.5rem;
+}
+.hero-badge {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: #4fc3f7;
+    background: rgba(79,195,247,0.08);
+    border: 1px solid rgba(79,195,247,0.25);
+    padding: 0.3rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+}
+.hero h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 0.6rem;
+}
+.hero h1 span { color: #4fc3f7; }
+.hero p {
+    font-size: 1.05rem;
+    color: #7b8ab8;
+    max-width: 480px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* ── Section label ── */
+.section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: #4fc3f7;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+/* ── Card ── */
+.card {
+    background: #0f1829;
+    border: 1px solid #1e2a40;
+    border-radius: 12px;
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    overflow: hidden;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4fc3f7, #1565c0);
+}
+
+/* ── Result cards ── */
+.result-safe {
+    background: linear-gradient(135deg, #0a2a1a 0%, #0f1829 100%);
+    border: 1px solid #1b5e20;
+    border-radius: 14px;
+    padding: 2rem 2.2rem;
+    text-align: center;
+}
+.result-safe::before {
+    background: linear-gradient(90deg, #00e676, #00c853);
+}
+.result-risk {
+    background: linear-gradient(135deg, #2a0a0a 0%, #1a0f0f 100%);
+    border: 1px solid #b71c1c;
+    border-radius: 14px;
+    padding: 2rem 2.2rem;
+    text-align: center;
+}
+.result-risk::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ef5350, #b71c1c);
+}
+
+.result-icon { font-size: 3.5rem; margin-bottom: 0.4rem; }
+.result-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+.result-sub {
+    font-size: 0.9rem;
+    color: #7b8ab8;
+    font-weight: 300;
+}
+
+/* ── Metric pill ── */
+.metric-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.metric-pill {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid #1e2a40;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    text-align: center;
+    min-width: 120px;
+}
+.metric-pill .mval {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: block;
+}
+.metric-pill .mlbl {
+    font-size: 0.7rem;
+    color: #7b8ab8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* ── Probability bar ── */
+.prob-bar-wrap {
+    margin-top: 1.2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+    height: 6px;
+    overflow: hidden;
+}
+.prob-bar-fill-safe {
+    height: 100%;
+    background: linear-gradient(90deg, #00e676, #00c853);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+.prob-bar-fill-risk {
+    height: 100%;
+    background: linear-gradient(90deg, #ef5350, #b71c1c);
+    border-radius: 4px;
+}
+
+/* ── Input overrides ── */
+.stSelectbox > div > div,
+.stNumberInput > div > div > input,
+.stSlider > div {
+    background: #111c2e !important;
+    border-color: #1e2a40 !important;
+    color: #e8eaf0 !important;
+    border-radius: 8px !important;
+}
+.stSelectbox label, .stNumberInput label, .stSlider label {
+    color: #7b8ab8 !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.03em !important;
+}
+
+/* ── Button ── */
+.stButton > button {
+    width: 100%;
+    background: linear-gradient(135deg, #1565c0, #0d47a1) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 2rem !important;
+    font-family: 'Space Mono', monospace !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+    margin-top: 0.5rem !important;
+}
+.stButton > button:hover {
+    background: linear-gradient(135deg, #1976d2, #1565c0) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 8px 24px rgba(21,101,192,0.35) !important;
+}
+
+/* ── Divider ── */
+hr { border-color: #1e2a40 !important; margin: 1.5rem 0 !important; }
+
+/* ── Model status badge ── */
+.status-ok {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(0,230,118,0.08);
+    border: 1px solid rgba(0,230,118,0.2);
+    color: #00e676;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 4px;
+}
+.status-err {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(239,83,80,0.1);
+    border: 1px solid rgba(239,83,80,0.3);
+    color: #ef5350;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 4px;
+}
+
+/* ── Tips box ── */
+.tip-box {
+    background: rgba(79,195,247,0.05);
+    border-left: 3px solid #4fc3f7;
+    border-radius: 0 8px 8px 0;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.83rem;
+    color: #90caf9;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
